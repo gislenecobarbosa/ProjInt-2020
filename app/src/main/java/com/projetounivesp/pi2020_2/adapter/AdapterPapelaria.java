@@ -30,7 +30,7 @@ public class AdapterEmpresa extends RecyclerView.Adapter<AdapterEmpresa.MyViewHo
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
-        View itemLista = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_empresa, parent, false);
+        View itemLista = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_papelaria, parent, false);
         return new MyViewHolder(itemLista);
     }
 
@@ -60,6 +60,7 @@ public class AdapterEmpresa extends RecyclerView.Adapter<AdapterEmpresa.MyViewHo
             super(itemView);
 
             imagemEmpresa = itemView.findViewById(R.id.imgAdapterEmpresa);
+            nomeEmpresa = itemView.findViewById(R.id.editConfPapelariaNome);
         }
     }
 }

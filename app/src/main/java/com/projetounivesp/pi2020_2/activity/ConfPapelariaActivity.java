@@ -38,7 +38,7 @@ import java.io.ByteArrayOutputStream;
  */
 
 public class ConfEmpresaActivity extends AppCompatActivity {
-    private EditText editNome, editEndereco, editBairro, editCep, editTelefone;
+    private EditText editEmpNome, editEmpEndereco, editEmpBairro, editEmpCep, editEmpTelefone;
     private ImageView imgPerfilEmpresa;
 
     private static final int SELECAO_GALERIA = 200;
@@ -50,7 +50,7 @@ public class ConfEmpresaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_conf_empresa);
+        setContentView(R.layout.activity_conf_papelaria);
 
         //Configurações iniciais
         inicializarComponentes();
@@ -64,7 +64,7 @@ public class ConfEmpresaActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        imgPerfilEmpresa.setOnClickListener(new View.OnClickListener() {
+        imgPerfilEmpresa.setOnClickListener(    new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(
@@ -95,11 +95,11 @@ public class ConfEmpresaActivity extends AppCompatActivity {
 
                 if (dataSnapshot.getValue() != null) {
                     Empresa empresa = dataSnapshot.getValue(Empresa.class);
-                    editNome.setText(empresa.getNome());
-                    editEndereco.setText(empresa.getEndereco());
-                    editBairro.setText(empresa.getBairro().toString());
-                    editCep.setText(empresa.getCep());
-                    editTelefone.setText(empresa.getTelefone());
+                    editEmpNome.setText(empresa.getNome());
+                    editEmpEndereco.setText(empresa.getEndereco());
+                    editEmpBairro.setText(empresa.getBairro());
+                    editEmpCep.setText(empresa.getCep());
+                    editEmpTelefone.setText(empresa.getTelefone());
 
                     urlImagemSelecionada = empresa.getUrlImagem();
                     if (urlImagemSelecionada != "") {
@@ -123,11 +123,11 @@ public class ConfEmpresaActivity extends AppCompatActivity {
     public void validarConfDadosEmpresa(View view) {
 
         //Valida se os campos foram preenchidos
-        String nome = editNome.getText().toString();
-        String endereco = editEndereco.getText().toString();
-        String bairro = editBairro.getText().toString();
-        String cep = editCep.getText().toString();
-        String telefone = editTelefone.getText().toString();
+        String nome = editEmpNome.getText().toString();
+        String endereco = editEmpEndereco.getText().toString();
+        String bairro = editEmpBairro.getText().toString();
+        String cep = editEmpCep.getText().toString();
+        String telefone = editEmpTelefone.getText().toString();
 
         if (!nome.isEmpty()) {
             if (!endereco.isEmpty()) {
@@ -247,11 +247,11 @@ public class ConfEmpresaActivity extends AppCompatActivity {
     }
 
     private void inicializarComponentes() {
-        editNome = findViewById(R.id.editConfEmpresaNome);
-        editEndereco = findViewById(R.id.editConfEmpresaEndereco);
-        editBairro = findViewById(R.id.editConfEmpresaBairro);
-        editCep = findViewById(R.id.editConfEmpresaCep);
-        editTelefone = findViewById(R.id.editConfEmpresaTelefone);
+        editEmpNome = findViewById(R.id.editConfEmpresaNome);
+        editEmpEndereco = findViewById(R.id.editConfEmpresaEndereco);
+        editEmpBairro = findViewById(R.id.editConfEmpresaBairro);
+        editEmpCep = findViewById(R.id.editConfEmpresaCep);
+        editEmpTelefone = findViewById(R.id.editConfEmpresaTelefone);
         imgPerfilEmpresa = findViewById(R.id.imgConfEmpresa);
     }
 

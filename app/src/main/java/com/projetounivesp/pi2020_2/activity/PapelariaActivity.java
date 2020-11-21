@@ -46,7 +46,7 @@ public class EmpresaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_empresa);
+        setContentView(R.layout.activity_papelaria);
 
         inicializarComponentes();
         autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
@@ -55,7 +55,7 @@ public class EmpresaActivity extends AppCompatActivity {
 
         //toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("PI2020-2 - Empresa");
+        toolbar.setTitle("PI2020-2 - Papelaria");
         setSupportActionBar(toolbar);
 
         //recyclerView
@@ -135,7 +135,7 @@ public class EmpresaActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    public boolean onOptionsItemSelected(@NonNull   MenuItem item) {
         switch (item.getItemId()){
             case R.id.menuSair:
                 deslogarUsuario();
@@ -164,7 +164,7 @@ public class EmpresaActivity extends AppCompatActivity {
     }
 
     private void abrirPedidos(){
-        startActivity(new Intent(EmpresaActivity.this,PedidosActivity.class));
+        startActivity(new Intent(EmpresaActivity.this, PedidosActivity.class));
     }
 
     private void abrirConfiguracao(){
